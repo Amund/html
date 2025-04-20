@@ -1,0 +1,23 @@
+{
+    "name": "amund/html",
+    "type": "library",
+    "description": "A PHP library for generating HTML content from PHP arrays.",
+    "homepage": "https://github.com/Amund/php-html",
+    "require": {
+        "php": ">=8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.0",
+        "phpstan/phpstan": "^2.1"
+    },
+    "license": "MIT",
+    "autoload": {
+        "files": [
+            "src/html.php"
+        ]
+    },
+    "scripts": {
+        "test": "phpunit",
+        "stan": "phpstan analyse"
+    }
+}
