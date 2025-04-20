@@ -2,7 +2,6 @@
     "name": "amund/html",
     "type": "library",
     "description": "A PHP library for generating HTML content from PHP arrays.",
-    "homepage": "https://github.com/Amund/php-html",
     "require": {
         "php": ">=8.0"
     },
