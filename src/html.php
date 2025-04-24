@@ -2,6 +2,12 @@
 
 class html
 {
+    const DEBUG_WRAPPER = [
+        'tag' => 'pre',
+        'style' =>
+        'font:12px/13px Consolas,\'Lucida Console\',monospace;text-align:left;color:#ddd;background-color:#222;padding:10px;max-height:500px;overflow:auto;',
+    ];
+
     /**
      * Return an HTML tag string, with its attributes and contents
      * @param string $tag HTML tag name
@@ -121,5 +127,31 @@ class html
         }
 
         return $output;
+    }
+
+    // Debug: print_r html formatted
+    static function print($args): void
+    {
+        echo self::render(array_merge(self::DEBUG_WRAPPER, ['content' => print_r($args, 1)]));
+    }
+
+    // Debug: var_dump html formatted
+    static function dump(...$args): void
+    {
+        ob_start();
+        var_dump(...$args);
+        $dump = ob_get_contents();
+        ob_end_clean();
+        echo self::render(array_merge(self::DEBUG_WRAPPER, ['content' => $dump]));
+    }
+
+    // Debug: var_export html formatted
+    static function export($args): void
+    {
+        echo self::render(
+            array_merge(self::DEBUG_WRAPPER, [
+                'content' => var_export($args, 1),
+            ]),
+        );
     }
 }
