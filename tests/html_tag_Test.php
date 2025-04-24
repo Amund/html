@@ -37,6 +37,7 @@ final class html_tag_Test extends TestCase
         $this->assertEquals(html::tag('input', ['required' => ''], ''), '<input required>');
         $this->assertEquals(html::tag('input', ['required' => 0], ''), '<input required>');
         $this->assertEquals(html::tag('input', ['required' => false], ''), '<input required>');
+        $this->assertEquals(html::tag('input', ['required' => null], ''), '<input>');
         $this->assertEquals(html::tag('input', ['value' => "0"], ''), '<input value="0">');
     }
 

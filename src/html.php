@@ -45,6 +45,10 @@ class html
         // prepare attributes output
         if (count($attributes) > 0) {
             foreach ($attributes as $key => $value) {
+                if ($value === NULL) {
+                    unset($attributes[$key]);
+                    continue;
+                }
                 if ($value !== '0' && empty($value)) {
                     $attributes[$key] = ' ' . $key;
                 } else {
