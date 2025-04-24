@@ -1,3 +1,6 @@
+![GitHub Tag](https://img.shields.io/github/v/tag/Amund/html)
+![Packagist Version](https://img.shields.io/packagist/v/amund/html)
+
 # PHP HTML Library
 
 A PHP library for generating HTML content from PHP arrays.
